@@ -8,4 +8,8 @@ public:
     
     OrthoCamera(GLSLProgram* glslProgram, glm::vec3 position = glm::vec3(0.0f), glm::vec2 size = glm::vec2(2.0f));
     void activate() override;
+
+
+	double camY = 0.0;
+	double camX = 0.0;
 };

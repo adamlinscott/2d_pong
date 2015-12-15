@@ -23,6 +23,6 @@ void OrthoCamera::activate()
     glUniformMatrix4fv(glslProgram->projectionMatrixLocation, 1, false, glm::value_ptr(projectionMatrix));
 
     //set viewMatrix - how we control the view (viewpoint, view direction, etc)
-    glm::mat4 viewMatrix = glm::lookAt(glm::vec3(position.x, position.y - 30, 150.0f), glm::vec3(position.x, position.y + 30, -110.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::mat4 viewMatrix = glm::lookAt(glm::vec3(position.x + camX, position.y - 30 + camY, 150.0f), glm::vec3(position.x + camX, position.y + 30 + camY, -110.0f), glm::vec3(0.0f, 1.0f, 0.0f));
     glUniformMatrix4fv(glslProgram->viewMatrixLocation, 1, false, glm::value_ptr(viewMatrix));
 };

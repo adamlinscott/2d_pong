@@ -292,6 +292,26 @@ void Pong::handleInput()
 						batRightVel.y = -batSpeed;
 					}
 					break;
+					case SDLK_i:
+					{
+						orthoCamera->camY += 5;
+					}
+					break;
+					case SDLK_j:
+					{
+						orthoCamera->camX += 5;
+					}
+					break;
+					case SDLK_k:
+					{
+						orthoCamera->camY -= 5;
+					}
+					break;
+					case SDLK_l:
+					{
+						orthoCamera->camX -= 5;
+					}
+					break;
 				}
 
 			break;

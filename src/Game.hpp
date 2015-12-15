@@ -21,6 +21,7 @@ public:
     void run();
     void run_once();
 
+	
 protected:
     void createWindow();
     void createContext();

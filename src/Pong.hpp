@@ -36,7 +36,7 @@ public:
     Model* wallLeft = nullptr;
     Model* wallRight = nullptr;
 
-    GLfloat batSpeed = 100.0f;
+    GLfloat batSpeed = 10.0f;
 
     glm::ivec2 score = glm::vec2(0);
     Pong(std::string windowName = "Pong");
