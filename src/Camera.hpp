@@ -14,7 +14,8 @@ public:
     glm::vec3 position = glm::vec3(0.0f);
 
     Camera(GLSLProgram* glslProgram, glm::vec3 position);
-    virtual void activate() {};
+    virtual void activate2D() {};
+	virtual void activate3D() {};
 
 protected:
     GLSLProgram* glslProgram = nullptr;

@@ -65,7 +65,7 @@ void Pong::render()
 
 	glslProgram->use();
 
-	camera->activate();
+	camera->activate3D();
 
 	for(std::vector<Model*>::iterator it = modelList.begin(); it != modelList.end(); ++it)
 	{
@@ -73,7 +73,7 @@ void Pong::render()
 		model->draw();
 	}
 
-	orthoCamera->activate();
+	orthoCamera->activate2D();
 	for(std::vector<Model*>::iterator it = scoreMarkerList.begin(); it != scoreMarkerList.end(); ++it)
 	{
 		Model* model = *it;
@@ -310,6 +310,26 @@ void Pong::handleInput()
 					case SDLK_l:
 					{
 						orthoCamera->camX -= 5;
+					}
+					break;
+					case SDLK_u:
+					{
+						orthoCamera->camAngle -= 10;
+					}
+					break;
+					case SDLK_o:
+					{
+						orthoCamera->camAngle += 10;
+					}
+					break;
+					case SDLK_m:
+					{
+						orthoCamera->camRot += 10;
+					}
+					break;
+					case SDLK_COMMA:
+					{
+						orthoCamera->camRot -= 10;
 					}
 					break;
 				}

@@ -11,7 +11,7 @@ OrthoCamera::OrthoCamera(GLSLProgram* glslProgram, glm::vec3 position, glm::vec2
 
 }
 
-void OrthoCamera::activate()
+void OrthoCamera::activate2D()
 {
     SDL_LogMessage(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG, "  orthoCamera activated");
 
@@ -19,10 +19,26 @@ void OrthoCamera::activate()
 
     //set projectionMatrix - how we go from 3D to 2D
     glm::vec2 halfSize = size / 2.0f;
-	glm::mat4 projectionMatrix = glm::perspective(FoV, 1.0f, 0.1f, 1000.0f);
+	glm::mat4 projectionMatrix = glm::ortho(-halfSize.x, halfSize.x, -halfSize.y, halfSize.y);
     glUniformMatrix4fv(glslProgram->projectionMatrixLocation, 1, false, glm::value_ptr(projectionMatrix));
 
     //set viewMatrix - how we control the view (viewpoint, view direction, etc)
-    glm::mat4 viewMatrix = glm::lookAt(glm::vec3(position.x + camX, position.y - 30 + camY, 150.0f), glm::vec3(position.x + camX, position.y + 30 + camY, -110.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::mat4 viewMatrix = glm::lookAt(glm::vec3(position.x, position.y, 1.0f), glm::vec3(position.x, position.y, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
     glUniformMatrix4fv(glslProgram->viewMatrixLocation, 1, false, glm::value_ptr(viewMatrix));
+};
+
+void OrthoCamera::activate3D()
+{
+	SDL_LogMessage(SDL_LOG_CATEGORY_RENDER, SDL_LOG_PRIORITY_DEBUG, "  orthoCamera activated");
+
+	float FoV = 900;
+
+	//set projectionMatrix - how we go from 3D to 2D
+	glm::vec2 halfSize = size / 2.0f;
+	glm::mat4 projectionMatrix = glm::perspective(FoV, 1.0f, 0.1f, 1000.0f);
+	glUniformMatrix4fv(glslProgram->projectionMatrixLocation, 1, false, glm::value_ptr(projectionMatrix));
+
+	//set viewMatrix - how we control the view (viewpoint, view direction, etc)
+	glm::mat4 viewMatrix = glm::lookAt(glm::vec3(position.x + camX + camRot, position.y - 30 + camY - camAngle, 150.0f - camAngle), glm::vec3(position.x + camX - camRot, position.y + 30 + camY + camAngle, -110.0f + camAngle), glm::vec3(0.0f, 1.0f, 0.0f));
+	glUniformMatrix4fv(glslProgram->viewMatrixLocation, 1, false, glm::value_ptr(viewMatrix));
 };

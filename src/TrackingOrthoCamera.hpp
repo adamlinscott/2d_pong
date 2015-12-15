@@ -8,5 +8,6 @@ public:
     Model* target = nullptr;
 
     TrackingOrthoCamera(GLSLProgram* glslProgram, Model* target, glm::vec2 size = glm::vec2(2.0f));
-    void activate() override;
+    void activate2D() override;
+	void activate3D() override;
 };
