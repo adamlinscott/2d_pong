@@ -10,5 +10,11 @@ Quad::Quad(GLSLProgram* glslProgram) :
     Vertex(   glm::vec3( high, high,  0.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 1.0f) ),
     Vertex(   glm::vec3( high, high,  0.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 1.0f) ),
     Vertex(   glm::vec3(  low,  low,  0.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(0.0f, 0.0f) ),
-    Vertex(   glm::vec3( high,  low,  0.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 0.0f) ) })
+    Vertex(   glm::vec3( high,  low,  0.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 0.0f) ),
+	Vertex(   glm::vec3(  low, high,  1.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(0.0f, 1.0f) ),
+	Vertex(   glm::vec3(  low,  low,  1.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(0.0f, 0.0f) ),
+	Vertex(   glm::vec3( high, high,  1.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 1.0f) ),
+	Vertex(   glm::vec3( high, high,  1.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 1.0f) ),
+	Vertex(   glm::vec3(  low,  low,  1.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(0.0f, 0.0f) ),
+	Vertex(   glm::vec3( high,  low,  1.0f),  glm::vec4(1.0f, 1.0f, 1.0f,  1.0f),  glm::vec2(1.0f, 0.0f) ) })
 {}

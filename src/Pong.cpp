@@ -42,7 +42,7 @@ Pong::Pong(std::string windowName)
 	modelList.push_back(wallBottom);
 
 
-	ball = new Model("ball", circle, textureOpenGL, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-50.0f, 20.0f, 0.0f));
+	ball = new Model("ball", circle, textureOpenGL, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-5.0f, 2.0f, 0.0f));
 	ball->scale = (glm::vec3(5.0f, 5.0f, 1.0f));
 	ball->angleVelocityDegs = 55.0f;
 	modelList.push_back(ball);
@@ -313,7 +313,7 @@ void Pong::handleInput()
 					}
 					break;
 				}
-
+			
 			break;
 		}
 		batLeft->setVelocity(batLeftVel);

@@ -11,7 +11,7 @@
 
 class Mesh {
 public:
-
+	
     GLSLProgram* glslProgram = nullptr;
 
     Mesh(GLSLProgram* glslProgram, std::vector<Vertex> vertexData = {});

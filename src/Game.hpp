@@ -7,7 +7,7 @@
 
 class Game {
 public:
-    std::string windowName;
+	std::string windowName;
     SDL_Window *sdl_windowPtr; //pointer to the SDL_Window
     SDL_GLContext context = NULL; //the SDL_GLContext
 
